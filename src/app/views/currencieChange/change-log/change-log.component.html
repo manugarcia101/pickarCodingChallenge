@@ -1,0 +1,18 @@
+<main>
+    <div class="start">
+        <p class="text-space">pickar</p>
+        <p class="conversion-link">> Go back</p>
+        <div class="title">
+            <div class="element">Date</div> 
+            <div class="element">From</div>
+            <div class="element">To</div>
+        </div>
+        <div *ngFor="let d of data">
+            <div class="data">
+                <div class="element">{{d.Date}}</div> 
+                <div class="element">{{d.From}}</div>
+                <div class="element">{{d.To}}</div>
+            </div>
+        </div>
+    </div>
+</main>

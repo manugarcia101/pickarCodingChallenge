@@ -1,0 +1,46 @@
+<main>
+
+    <div class="start">
+        <p class="text-space">pickar</p>
+        <p>Convert currencies in real-time.</p>
+    </div>
+    <div class="middle">
+        <div class="middle-form">
+            <form [formGroup]="rForm" (submit)="convert()">
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input
+                      type="text"
+                      name="amount"
+                      class="col-sm-10 form-control"
+                      formControlName="amount"
+                    />
+                    <label for="from">From</label>
+                    <select [compareWith]="compare" formControlName="from" name="from">
+                        <option [ngValue]="from" *ngFor="let currencie of currencies">
+                            {{ currencie }}
+                        </option>
+                    </select>
+                    <label for="to">To</label>
+                    <select [compareWith]="compare" formControlName="to" name="to">
+                        <option [ngValue]="to" *ngFor="let currencie of currencies">
+                            {{ currencie }}
+                        </option>
+                    </select>
+                
+                <button class="btn btn-primary" type="submit">
+                    Convert
+                </button>
+                </div>
+            </form> 
+        </div>
+    </div>
+
+      
+    <div class="end">
+        <p class="conversion-link">View conversion history ></p>
+        <p class="toConvert">{{amount}} {{from}} =</p>
+        <p class="result">{{result}} {{to}}</p>
+    </div>
+</main>
+
